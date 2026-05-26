@@ -32,7 +32,8 @@
         const dir = 'images'; // 画像を保存しているフォルダ名
 
         // GitHub APIのエンドポイント
-        const apiUrl = `https://github.com/${user}/${repo}/contents/${dir}`;
+        //const apiUrl = `https://github.com/${user}/${repo}/contents/${dir}`;
+        const apiUrl = `https://${user}.github.com/${repo}/contents/${dir}`;
 
         async function loadImageList() {
             try {
