@@ -7,7 +7,6 @@
     <style>
         .gallery {
             display: grid;
-            /*grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));*/
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
             gap: 15px;
             padding: 20px;
@@ -24,20 +23,10 @@
 <body>
 
     <h1>画像ファイル一覧</h1>
-    <div class="gallery" id="image-gallerys">
+    <div class="gallery" id="image-gallerys"></div>
 
-            <!--
-            <li><img src="img/img-1.png" /></li>
-            <li><img src="img/img-2.png" /></li>
-            -->
-
-    </div>
-
-        
-    
     <script>
         const gallery = document.getElementById('image-gallerys');
-        //gallery.innerHTML = ''; // 一度クリア
         let img = null;
         let path = null;
         for (var i = 1; i <= 6; ++i) {
@@ -46,42 +35,7 @@
             img.src = path;
             img.alt = "img-" + i;
             gallery.appendChild(img);
-            //gallery.appendChild('<a href="' + path + '">' + img + '</a>');
         }
-/*
-        // GitHubリポジトリの情報を指定
-        const user = 'jj-blog';
-        const repo = 'knowbe.jp';
-        const dir = 'images'; // 画像を保存しているフォルダ名
-
-        // GitHub APIのエンドポイント
-        //const apiUrl = `https://github.com/${user}/${repo}/contents/${dir}`;
-        const apiUrl = `https://${user}.github.com/${repo}/${dir}`;
-
-        async function loadImageList() {
-            try {
-                const response = await fetch(apiUrl);
-                const files = await response.json();
-                
-                const gallery = document.getElementById('image-gallery');
-                gallery.innerHTML = ''; // 一度クリア
-
-                // 画像ファイルだけをフィルタリング
-                files.forEach(file => {
-                    if (file.type === 'file' && file.name.match(/\.(jpg|jpeg|png|gif|webp)$/i)) {
-                        const img = document.createElement('img');
-                        img.src = file.download_url;
-                        img.alt = file.name;
-                        gallery.appendChild(img);
-                    }
-                });
-            } catch (error) {
-                console.error('画像の読み込みに失敗しました:', error);
-            }
-        }
-
-        loadImageList();
-*/
     </script>
 </body>
 </html>
