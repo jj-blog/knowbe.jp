@@ -38,12 +38,14 @@
     <script>
         const gallery = document.getElementById('image-gallerys');
         //gallery.innerHTML = ''; // 一度クリア
-        let imt = null;
+        let img = null;
+        let path = null;
         for (var i = 1; i <= 6; ++i) {
+            path = "img/img-" + i + ".png";
             img = document.createElement('img');
-            img.src = "img/img-" + i + ".png";
+            img.src = path;
             img.alt = "img-" + i;
-            gallery.appendChild(img);
+            gallery.appendChild('<a href="' + path + '">' + img + '</a>');
         }
 /*
         // GitHubリポジトリの情報を指定
