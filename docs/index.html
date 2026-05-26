@@ -24,15 +24,27 @@
 
     <h1>画像ファイル一覧</h1>
     <div class="gallery" id="image-gallery">
-        <ul>
+        <ul id="image-gallerys">
+            <!--
             <li><img src="img/img-1.png" /></li>
             <li><img src="img/img-2.png" /></li>
-        </ul>
+            -->
+        </ol>
     </div>
 
         
     
     <script>
+        const gallery = document.getElementById('image-gallery');
+        gallery.innerHTML = ''; // 一度クリア
+        let imt = null;
+        for (var i = 1; i <= 6; ++i) {
+            img = document.createElement('img');
+            img.src = "img/img-" + i + ".png";
+            img.alt = "";
+            gallery.appendChild(img);
+        }
+<!--
         // GitHubリポジトリの情報を指定
         const user = 'jj-blog';
         const repo = 'knowbe.jp';
@@ -65,6 +77,7 @@
         }
 
         loadImageList();
+-->
     </script>
 </body>
 </html>
