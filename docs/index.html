@@ -7,7 +7,8 @@
     <style>
         .gallery {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            /*grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));*/
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
             gap: 15px;
             padding: 20px;
         }
@@ -23,13 +24,13 @@
 <body>
 
     <h1>画像ファイル一覧</h1>
-    <div class="gallery" id="image-gallery">
-        <ul id="image-gallerys">
+    <div class="gallery" id="image-gallerys">
+
             <!--
             <li><img src="img/img-1.png" /></li>
             <li><img src="img/img-2.png" /></li>
             -->
-        </ol>
+
     </div>
 
         
@@ -41,7 +42,7 @@
         for (var i = 1; i <= 6; ++i) {
             img = document.createElement('img');
             img.src = "img/img-" + i + ".png";
-            img.alt = "";
+            img.alt = "img-" + i;
             gallery.appendChild(img);
         }
 <!--
